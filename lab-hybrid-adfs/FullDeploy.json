@@ -30,7 +30,7 @@
     "usersArray": {
       "type": "array",
       "defaultValue": [
-        { "FName": "Bob", "LName": "Jones", "SAM": "bjones" },
+        { "FName": "Stefan", "LName": "Denninger", "SAM": "dennings" },
         { "FName": "Bill", "LName": "Smith", "SAM": "bsmith" },
         { "FName": "Mary", "LName": "Phillips", "SAM": "mphillips" },
         { "FName": "Sue", "LName": "Jackson", "SAM": "sjackson" }

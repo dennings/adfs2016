@@ -4,12 +4,12 @@
   "parameters": {
     "assetLocation": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/Azure-Samples/active-directory-lab-hybrid-adfs/master/lab-hybrid-adfs/",
+      "defaultValue": "https://raw.githubusercontent.com/dennings/adfs2016/master/lab-hybrid-adfs/",
       "metadata": { "description": "This is the location in which all the linked templates are stored." }
     },
     "adminUsername": {
       "type": "string",
-      "defaultValue": "localAdmin",
+      "defaultValue": "localadmin",
       "metadata": { "description": "Username to set for the local User. Cannot be \"Administrator\", \"root\" and possibly other such common account names. " }
     },
     "deploymentNumber": {
@@ -24,16 +24,16 @@
     },
     "adDomainName": {
       "type": "string",
-      "defaultValue": "contoso.com",
+      "defaultValue": "ademo.local",
       "metadata": { "description": "Two-part internal AD name - short/NB name will be first part ('contoso')." }
     },
     "usersArray": {
       "type": "array",
       "defaultValue": [
         {
-          "FName": "Bob",
-          "LName": "Jones",
-          "SAM": "bjones"
+          "FName": "Stefan",
+          "LName": "Denninger",
+          "SAM": "dennings"
         },
         {
           "FName": "Bill",
@@ -65,39 +65,39 @@
     },
     "vmSize": {
       "type": "string",
-      "defaultValue": "Standard_A2_v2",
+      "defaultValue": "Standard_A4_v2",
       "allowedValues": [ "Standard_A1_v2", "Standard_A2_v2", "Standard_A4_v2", "Standard_A2M_v2", "Standard_A4M_v2", "Standard_A4_v2", "Standard_D2_v2", "Standard_D3_v2", "Standard_D11_v2", "Standard_D12_v2", "Standard_B2ms", "Standard_B2s", "Standard_B4ms" ],
       "metadata": { "description": "Select a VM SKU (please ensure the SKU is available in your selected region)." }
     },
     "virtualNetworkAddressRange": {
       "type": "string",
       "metadata": { "description": "The address range of the new virtual network in CIDR format" },
-      "defaultValue": "10.0.0.0/16"
+      "defaultValue": "172.19.80.192/26"
     },
     "adSubnetAddressRange": {
       "type": "string",
       "metadata": { "description": "The address range of the desired subnet for Active Directory." },
-      "defaultValue": "10.0.1.0/24"
+      "defaultValue": "172.19.80.192/28"
     },
     "adIP": {
       "type": "string",
       "metadata": { "description": "The IP Addresses assigned to the domain controllers (a, b). Remember the first IP in a subnet is .4 e.g. 10.0.0.0/16 reserves 10.0.0.0-3. Specify one IP per server - must match numberofVMInstances or deployment will fail." },
-      "defaultValue": "10.0.1.4"
+      "defaultValue": "172.19.80.200"
     },
     "adfsIP": {
       "type": "string",
       "metadata": { "description": "The IP Addresses assigned to the domain controllers (a, b). Remember the first IP in a subnet is .4 e.g. 10.0.0.0/16 reserves 10.0.0.0-3. Specify one IP per server - must match numberofVMInstances or deployment will fail." },
-      "defaultValue": "10.0.1.5"
+      "defaultValue": "172.19.80.201"
     },
     "dmzSubnetAddressRange": {
       "type": "string",
       "metadata": { "description": "The address range of the desired subnet for the DMZ." },
-      "defaultValue": "10.0.2.0/24"
+      "defaultValue": "172.19.80.208/28"
     },
     "cliSubnetAddressRange": {
       "type": "string",
       "metadata": { "description": "The address range of the desired subnet for clients." },
-      "defaultValue": "10.0.3.0/24"
+      "defaultValue": "172.19.80.224/28"
     }
   },
   "variables": {

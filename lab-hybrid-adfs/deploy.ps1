@@ -11,10 +11,10 @@ Import-Module Azure -ErrorAction SilentlyContinue
     # Must be unique for simultaneous/co-existing deployments
     #"master" or "dev"
     $RGName                  = "<YOUR RESOURCE GROUP>"
-    $DeployRegion            = "<SELECT AZURE REGION>"
+    $DeployRegion            = "West Europe"
 
     $Branch                  = "master"
-    $AssetLocation           = "https://raw.githubusercontent.com/Azure-Samples/active-directory-lab-hybrid-adfs/$Branch/lab-hybrid-adfs/"
+    $AssetLocation           = "https://raw.githubusercontent.com/dennings/adfs2016/$Branch/lab-hybrid-adfs/"
 
     $userName                = "<AD ADMINISTRATOR LOGIN>"
     $secpasswd               = “<AD ADMINISTRATOR PASSWORD>”
